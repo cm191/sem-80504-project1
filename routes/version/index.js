@@ -6,7 +6,7 @@ const router = Router();
 
 router.get('/', (req, res) => {
     res.send('This is version 0 of the HotBurger service');
-    logger.logRequest(`request made for /version response returned successfully`);
+    logger.logRequest(`request made for /version. response returned successfully\n`);
 });
 
 module.exports = router;

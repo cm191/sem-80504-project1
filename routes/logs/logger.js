@@ -1,5 +1,5 @@
 let fs = require('fs');
-const logFile = "server.log";
+const logFile = "./server.log";
 
 function logRequest(data) {
     fs.appendFile(`${logFile}`, data, (err) => {
@@ -9,13 +9,13 @@ function logRequest(data) {
     });
 }
 
-function printLog() {
+function printLog(callback) {
     fs.readFile(`${logFile}`, (err, data) => {
         if(err) {
             throw err;
         }
 
-        return data;
+        callback(data.toString());
     });
 }
 
