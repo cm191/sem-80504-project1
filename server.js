@@ -2,6 +2,9 @@ const express = require('express');
 const server = express();
 const port = 3000;
 
-server.get('/', (req, res) => res.send('hello'));
+const version = require('./routes/version');
 
-server.listen(port, () => console.log('server running'));
+server.get('/', (req, res) => res.send('hello'));
+server.use('/version', version);
+
+server.listen(port);
