@@ -1,5 +1,5 @@
 let fs = require('fs');
-const logFile = "./server.log";
+const logFile = "./logs/server.log";
 
 function logRequest(data) {
     fs.appendFile(`${logFile}`, data, (err) => {
